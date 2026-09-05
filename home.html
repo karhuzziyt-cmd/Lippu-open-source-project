@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="rappasoft/laravel-livewire-tables/core.min.css" rel="stylesheet" />
+    <link href="rappasoft/laravel-livewire-tables/thirdparty.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<style>
+  .px-3.h-full.w-full.flex.flex-col.z-\[11\].absolute.top-0.justify-between.left-0 {
+    font-size: 135% !important;
+  }
+</style>
+
+
+    <!-- ✅ tärkeä meta safe-area tukeen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Aseta tähän lipun nimi</title>
+<style>
+  .gotham_medium.absolute.text-sm.bottom-\[2\.5vw\].-ml-\[3%\].flex.flex-row.items-center.justify-center.gap-1\.5 {
+    color: #007AC9 !important;
+  }
+</style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q80BVP2SZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5Q80BVP2SZ');
+    </script>
+    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="css/fonts.css" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="preload" as="style" href="build/assets/vue-0e4NEHia.css" />
+    <link rel="preload" as="style" href="build/assets/app-C_ffcLDD.css" />
+    <link rel="modulepreload" href="build/assets/vue-DohHF9Vj.js" />
+    <link rel="modulepreload" href="build/assets/_commonjsHelpers-BosuxZz1.js" />
+    <link rel="stylesheet" href="build/assets/vue-0e4NEHia.css" data-navigate-track="reload" />
+    <link rel="stylesheet" href="build/assets/app-C_ffcLDD.css" data-navigate-track="reload" />
+    <script type="module" src="build/assets/vue-DohHF9Vj.js" data-navigate-track="reload"></script>
+
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+
+        /* ✅ Safe area fix: lisää padding-top notchin mukaan */
+        #ticket-header {
+            padding-top: max(env(safe-area-inset-top), 20px) !important;
+        }
+    </style>
+
+    <script src="rappasoft/laravel-livewire-tables/core.min.js"></script>
+    <script src="rappasoft/laravel-livewire-tables/thirdparty.min.js"></script>
+</head>
+
+<body ontouchstart="" class="gotham_book">
+
+    <div>
+        <main id="main" class="p-0 m-0 bg-[##0000ff] overflow-hidden">
+            <div id="vue-app"></div>
+        </main>
+
+        <div wire:snapshot="{&quot;data&quot;:{&quot;show_notice&quot;:false}}" wire:id="WLvxSBykdiRL9VcadYcI"></div>
+
+        <div wire:snapshot="{&quot;data&quot;:{&quot;message&quot;:&quot;&quot;,&quot;open&quot;:false}}" wire:id="SLU4PVNkIPQbDhP0ZQXP" wire:ignore.self>
+            <div x-data="{ open: window.Livewire.find('SLU4PVNkIPQbDhP0ZQXP').entangle('open') }" 
+                 x-transition x-show="open"
+                 class="fixed bottom-24 z-[9999] h-fit w-full">
+                <div class="w-full flex justify-center items-center h-fit">
+                    <div class="flex flex-row justify-between">
+                        <label class="text-white text-sm gotham_book whitespace-normal break-words w-[90%]"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/pro.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        console.warn('Livewire: The published Livewire assets are out of date\n See: https://livewire.laravel.com/docs/installation#publishing-livewires-frontend-assets')
+    </script>
+    <script src="vendor/livewire/livewire.min.js" 
+            data-csrf="OLQAKxfzvN9FeqYtESY8kvsN94gp5DGxkvcm7DBl"
+            data-update-uri="/livewire/update" 
+            data-navigate-once="true"></script>
+
+    <script>
+        function hexToRgb(hex) {
+            hex = hex.replace(/^#/, '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const bigint = parseInt(hex, 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        const selector = 'div.w-full.mt-1.relative.rounded-b-xl.mb-\\[2\\%\\]';
+
+        function updateColors(elements, color) {
+            elements.forEach(el => {
+                el.style.backgroundColor = color;
+            });
+            console.log(`Päivitettiin ${elements.length} lipun väri.`);
+        }
+
+        let currentColor = null;
+
+        function fetchAndUpdateColors() {
+            fetch('/api/colors')
+                .then(res => res.json())
+                .then(data => {
+                    currentColor = hexToRgb(data.today_color);
+                    const elements = document.querySelectorAll(selector);
+                    updateColors(elements, currentColor);
+                })
+                .catch(err => console.error('Virhe haettaessa väriä:', err));
+        }
+
+        window.addEventListener('DOMContentLoaded', fetchAndUpdateColors);
+
+        const observer = new MutationObserver(mutations => {
+            if (!currentColor) return;
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === 1) {
+                        if (node.matches(selector)) {
+                            node.style.backgroundColor = currentColor;
+                            console.log('Uuden lipun väri päivitetty.');
+                        } else {
+                            const nested = node.querySelectorAll(selector);
+                            if (nested.length) {
+                                updateColors(nested, currentColor);
+                            }
+                        }
+                    }
+                });
+            });
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker rekisteröity:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker rekisteröinti epäonnistui:', error);
+                    });
+            });
+        }
+    </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const menu = document.querySelector('.flex.flex-row.justify-around');
+  if (menu) {
+    menu.style.position = 'sticky';
+    menu.style.top = '0';
+    menu.style.background = '#fff';
+    menu.style.zIndex = '1000';
+    document.body.style.paddingTop = menu.offsetHeight + 'px';
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Tallennetaan poistettujen ja värien tila localStorageen
+  let removedTickets = JSON.parse(localStorage.getItem("removedTickets") || "[]");
+  let ticketColors = JSON.parse(localStorage.getItem("ticketColors") || "{}");
+
+  let modal, currentTicketInner = null;
+
+  // Väripallojen värit
+  const availableColors = [
+    "#64BE1E", "#00985F", "#8C4799",
+    "#00B9E4", "#FED100", "#FF6319",
+    "#F89DD1", "#D90349", "#007DCB"
+  ];
+
+  // Luo popup
+  function createModal() {
+    modal = document.createElement('div');
+    Object.assign(modal.style, {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'rgba(0,0,0,0.5)',
+      display: 'none',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: '10000',
+      transition: 'opacity 0.3s ease',
+      opacity: '0'
+    });
+
+    const box = document.createElement('div');
+    Object.assign(box.style, {
+      background: 'white',
+      borderRadius: '20px',
+      padding: '25px',
+      textAlign: 'center',
+      width: '85%',
+      maxWidth: '340px',
+      boxShadow: '0 6px 20px rgba(0,0,0,0.3)',
+      fontFamily: 'Arial, sans-serif'
+    });
+
+    box.innerHTML = `
+      <p style="margin-bottom:15px; font-size:18px; color:#333;">Lipun asetukset</p>
+      <div id="colorPicker" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:20px;">
+        ${availableColors.map(color =>
+          `<button data-color="${color}" style="width:30px; height:30px; border-radius:50%; border:none; background:${color}; cursor:pointer;"></button>`
+        ).join('')}
+      </div>
+      <div style="display:flex; gap:10px; justify-content:center;">
+        <button id="deleteBtn" style="flex:1; padding:12px; background:#ff4d4d; color:white; border:none; border-radius:12px;">Poista</button>
+        <button id="closeModal" style="flex:1; padding:12px; background:#ccc; border:none; border-radius:12px;">Sulje</button>
+      </div>
+    `;
+
+    modal.appendChild(box);
+    document.body.appendChild(modal);
+  }
+
+  function showModal(ticketInner) {
+    currentTicketInner = ticketInner;
+    modal.style.display = 'flex';
+    setTimeout(() => modal.style.opacity = '1', 10);
+  }
+
+  function hideModal() {
+    modal.style.opacity = '0';
+    setTimeout(() => modal.style.display = 'none', 300);
+    currentTicketInner = null;
+  }
+
+  // Klikkauslogiikka popupissa
+  document.addEventListener('click', (e) => {
+    if (e.target.id === "closeModal" || e.target === modal) {
+      hideModal();
+    }
+
+    // Väri valittu
+    if (e.target.hasAttribute('data-color') && currentTicketInner) {
+      const color = e.target.getAttribute('data-color');
+      const ticketId = currentTicketInner.innerText.trim();
+      currentTicketInner.style.backgroundColor = color;
+      ticketColors[ticketId] = color;
+      localStorage.setItem("ticketColors", JSON.stringify(ticketColors));
+    }
+
+    // Lippu poistettu
+    if (e.target.id === "deleteBtn" && currentTicketInner) {
+      const ticketId = currentTicketInner.innerText.trim();
+      if (!removedTickets.includes(ticketId)) {
+        removedTickets.push(ticketId);
+        localStorage.setItem("removedTickets", JSON.stringify(removedTickets));
+      }
+
+      const outerFrame = currentTicketInner.closest('div.w-full.rounded-xl.relative.mt-2');
+      if (outerFrame) {
+        outerFrame.remove();
+      } else {
+        currentTicketInner.remove();
+      }
+
+      hideModal();
+    }
+  });
+
+  // Lisää kuuntelijat ja värit lipuille
+  function applyTicketBindings() {
+    document.querySelectorAll('div.w-full.rounded-xl.relative.mt-2').forEach(frame => {
+      const inner = frame.querySelector('div.w-full.mt-1.relative.rounded-b-xl.mb-\\[2\\%\\]');
+      if (!inner) return;
+
+      const ticketId = inner.innerText.trim();
+
+      // jos poistettu → poista kehys
+      if (removedTickets.includes(ticketId)) {
+        frame.remove();
+        return;
+      }
+
+      // lisää klikkaus vain kerran kehykseen
+      if (!frame.dataset.bound) {
+        frame.dataset.bound = "true";
+        frame.addEventListener('click', () => showModal(inner));
+      }
+
+      // palauta tallennettu väri jos löytyy
+      if (ticketColors[ticketId]) {
+        inner.style.backgroundColor = ticketColors[ticketId];
+      }
+    });
+  }
+
+  createModal();
+  applyTicketBindings();
+
+  // Seuraa DOM-muutoksia (esim. Vue lisää uusia lippuja)
+  const observer = new MutationObserver(applyTicketBindings);
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const badge = document.querySelector('.badge');
+
+  async function req(action) {
+    const r = await fetch('/online.php?action=' + action, { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }
+
+  async function ping() {
+    try {
+      const data = await req('ping');
+      render(data.online);
+    } catch (e) { console.warn(e); }
+  }
+
+  function render(n) {
+    const word = n === 1 ? 'käyttäjä' : 'käyttäjää';
+    badge.innerHTML = `<span class="dot"></span> Online: ${n} ${word}`;
+  }
+
+  // Pingaa 5 sek välein niin kauan kun sivu on auki
+  ping();
+  const pingTimer = setInterval(ping, 5000);
+
+  // Päivitä heti kun palaat välilehdelle
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) ping();
+  });
+
+  // Poista heti kun suljet sivun
+  const leave = () => {
+    try { navigator.sendBeacon('/online.php?action=leave'); } catch {}
+  };
+  window.addEventListener('beforeunload', leave);
+  window.addEventListener('pagehide', leave); // iOS/Safari
+});
+</script>
+
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Testi HSL Lippu</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Vue-sovellus -->
+  <script type="module" src="./vue-DohHF9Vj.js"></script>
+
+  <!-- Scripti, joka vaihtaa user.svg -> logo.svg kun sivu latautuu -->
+  <script>
+    window.addEventListener("load", () => {
+      const img = document.querySelector("img[src='/svg/user.svg']");
+      if (img) {
+        img.src = "/svg/logo.svg";  // vaihda oma tiedostopolku tähän
+      }
+    });
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img[src='/svg/user.svg']").forEach(el => {
+    el.src = "https://liputvip.win/svg/user.svg";
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.querySelector('.flex.flex-row.justify-around'); // yläpalkki
+
+  function fixSticky() {
+    if (menu) {
+      menu.style.position = "sticky";
+      menu.style.top = "0";
+      menu.style.zIndex = "1000";
+      menu.style.background = "#fff"; // ei läpinäkyvä tausta
+    }
+
+    // varmista että kaikki parent-elementit sallivat sticky:n
+    let parent = menu?.parentElement;
+    while (parent) {
+      const style = getComputedStyle(parent);
+      if (style.overflow !== "visible") {
+        parent.style.overflow = "visible";
+      }
+      if (style.position === "relative") {
+        // tämä on ok, sticky toimii relative/absolute/scroll parentissa
+      }
+      parent = parent.parentElement;
+    }
+  }
+
+  fixSticky();
+
+  // aja aina kun DOM muuttuu (Vue/Livewire ym. päivitykset)
+  const observer = new MutationObserver(fixSticky);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // aja myös kun palaat välilehdelle
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) fixSticky();
+  });
+});
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.querySelector('.flex.flex-row.justify-around');
+  function fixTopbar() {
+    if (menu) {
+      menu.style.background = "#fff"; // aina valkoinen tausta
+    }
+  }
+
+  // aja heti
+  fixTopbar();
+
+  // aja kun palaa välilehdelle
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) fixTopbar();
+  });
+
+  // aja jos DOM muuttuu
+  const observer = new MutationObserver(fixTopbar);
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+    
+<script>
+  const changeColor = () => {
+    document.querySelectorAll("label.gotham_medium").forEach(el => {
+      if (el.textContent.includes("Matkustusalue")) {
+        el.style.color = "#007AC9";
+      }
+    });
+  };
+
+  // Aja heti kun sivu latautuu ja sitten jatkuvasti 1s välein
+  setInterval(changeColor, 1000);
+</script>
+
+
+<script>
+function updateTicketColor(color) {
+  // hae kaikki lipun elementit (säädä selector oikeaksi)
+  const tickets = document.querySelectorAll('div.w-full.mt-1.relative.rounded-b-xl.mb-\\[2\\%\\]');
+  tickets.forEach(el => {
+    el.style.backgroundColor = color;
+  });
+  console.log("[Lippu] Väri päivitetty:", color, "→", tickets.length, "elementtiä");
+}
+
+async function fetchAndUpdateTicketColor() {
+  try {
+    const res = await fetch('/api/colors?t=' + Date.now(), { cache: 'no-store' });
+    const data = await res.json();
+    const color = data.today_color || "#000000";
+    updateTicketColor(color);
+  } catch (err) {
+    console.error("Virhe väriä haettaessa:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", fetchAndUpdateTicketColor);
+setInterval(fetchAndUpdateTicketColor, 30000);
+
+// Jos Vue/Livewire lisää DOM-elementtejä jälkikäteen → päivitä nekin
+const observer = new MutationObserver(() => {
+  if (window.currentTicketColor) {
+    updateTicketColor(window.currentTicketColor);
+  }
+});
+observer.observe(document.body, { childList: true, subtree: true });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hardcodedColor = "#FED100";
+  const ticketSelector = 'div.w-full.mt-1.relative.rounded-b-xl.mb-\\[2\\%\\]';
+
+  function applyColor() {
+    document.querySelectorAll(ticketSelector).forEach(function (el) {
+      el.style.backgroundColor = hardcodedColor;
+    });
+  }
+
+  applyColor();
+
+  const observer = new MutationObserver(applyColor);
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function hideNetworkError() {
+    const popups = document.querySelectorAll('div.bg-\\[\\#CA2B53\\]');
+    popups.forEach(el => {
+      if (el.innerText.includes("Verkko-virhe")) {
+        el.style.display = "none";
+        console.log("Piilotettiin Verkko-virhe -popup");
+      }
+    });
+  }
+
+  // Piilota heti latauksessa
+  hideNetworkError();
+
+  // Seuraa DOM-muutoksia ja piilota jos popup ilmestyy myöhemmin
+  const observer = new MutationObserver(hideNetworkError);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Piilota vielä varmuuden vuoksi ensimmäisten sekuntien ajan
+  let count = 0;
+  const interval = setInterval(() => {
+    hideNetworkError();
+    count++;
+    if (count > 10) clearInterval(interval); // lopetetaan 10s jälkeen
+  }, 1000);
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
+

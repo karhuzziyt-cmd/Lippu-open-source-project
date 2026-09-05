@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTSIKKO (lipun nimi)</title>
+    
+    <style>
+        /* ---------------------------------------------------- */
+        /* MOBIILIOPTIMOITU CSS-TYYLI                           */
+        /* ---------------------------------------------------- */
+        
+        body {
+            background: linear-gradient(135deg, #1e90ff 0%, #00bcd4 50%, #7b68ee 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+            overflow-x: hidden; /* Estää vaakavierityksen mobiilissa */
+        }
+
+        /* Otsikon tyyli (Futuristinen/Frutiger Aero) */
+        .header-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #fff; /* Valkoinen teksti */
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.8); /* Antaa kiiltoa ja syvyyttä */
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            /* Lasi-efekti otsikon taustalla (valinnainen, mutta tyylikäs) */
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Dashboard-säiliö: Pystysuora asettelu puhelimelle */
+        .dashboard-container {
+            display: flex;
+            flex-direction: column; /* Tärkein muutos: Painikkeet allekkain */
+            gap: 20px; /* Pienempi rako painikkeiden välillä mobiilissa */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 90%; /* Vie suurimman osan näytön leveydestä */
+            max-width: 400px; /* Ei veny liian leveäksi tabletilla */
+            align-items: center;
+        }
+
+        /* Yleinen Glass Button -tyyli */
+        .glass-button {
+            background: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+            border-radius: 18px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2); 
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Vie koko säiliön leveyden (max-width 400px) */
+            height: 80px; /* Pienempi korkeus mobiilissa */
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            position: relative;
+            overflow: hidden;
+            
+            /* TÄRKEÄ MOBIILIOPTIMOINTI: Aktivoi hover-efektit myös painettaessa */
+            touch-action: manipulation;
+        }
+
+        /* Painikkeen Teksti */
+        .button-text {
+            font-size: 1.3em; /* Hieman isompi teksti puhelimessa */
+            font-weight: 600;
+            color: #000; 
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); 
+            z-index: 2; 
+        }
+
+        /* Hover-efekti (toimii tietokoneella ja simuloidaan napautuksella mobiilissa) */
+        .glass-button:hover,
+        .glass-button:active { /* Lisätty :active mobiilin napautusta varten */
+            background: rgba(255, 255, 255, 0.35); 
+            transform: translateY(-3px) scale(1.03); /* Nostaa vain hieman */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Kiilto-efekti */
+        .glass-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: all 0.7s;
+            transform: skewX(-20deg);
+        }
+
+        .glass-button:hover::before {
+            left: 150%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <h1 class="header-title">PÄÄOTSIKKO (lipun nimk)</h1>
+        
+        <a href="home.html" class="glass-button" id="btn-lippu">
+            <span class="button-text">Lippuun</span>
+        </a>
+
+        <a href="KIRJOITA TÄHÄN SIJAINTI" class="glass-button" id="btn-telegram">
+            <span class="button-text">PAINIKE 2</span>
+        </a>
+
+        <a href="KIRJOITA TÄHÄN SIJAINTI" class="glass-button" id="btn-sivu">
+            <span class="button-text">PAINIKE 3</span>
+        </a>
+
+    </div>
+</body>
+</html>

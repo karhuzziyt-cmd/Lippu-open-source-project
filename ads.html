@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>    <link href="rappasoft/laravel-livewire-tables/core.min.css" rel="stylesheet" />     <link href="rappasoft/laravel-livewire-tables/thirdparty.css" rel="stylesheet" />
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,shrink-to-fit=no">
+    <title>vuohi.org - Kirjaudu sisään</title>
+
+
+    
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <link href="css/all.min.css" rel="stylesheet" />
+    
+    
+    <style type="text/css">@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/300/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/300/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/greek/300/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/300/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/500/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/greek/500/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/500/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/500/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/300/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/300/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/greek/300/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/300/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/400/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/500/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/500/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/latin/500/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/500/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/greek/500/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/500/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/greek-ext/700/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(cf-fonts/s/ubuntu/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="css/body.css" rel="stylesheet" />
+    <link rel="manifest" href="manifest2.json" />
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="description" content="Paras HSL matkalippu simulaattor!">
+    <meta name="keywords" content="fuckhsl, taskuhsl, feikkihsl, hsl, hsl lippu">
+    <meta name="author" content="vuohi">
+
+
+    <meta property="og:title" content="vuohi.org" />
+    <meta property="og:description" content="vuohi.org is the best ticket simulator!" />
+    <meta property="og:image" content="https://vuohi.org/logo.jpg" />
+    <meta property="og:url" content="https://vuohi.org/dashboard" />
+    <meta property="og:type" content="website" />
+  
+
+   
+    <link rel="preload" as="style" href="build/assets/app-C_ffcLDD.css" /><link rel="stylesheet" href="build/assets/app-C_ffcLDD.css" data-navigate-track="reload" />    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+<script src="rappasoft/laravel-livewire-tables/core.min.js"  ></script> <script src="rappasoft/laravel-livewire-tables/thirdparty.min.js"  ></script></head>
+
+<body class="bg-background-950">
+    <div id="main" class="transition-all opacity-0 duration-700">
+        <div class="p-5 pb-0 hidden sm:block">
+            <a href="locale/ru.html" class="text-white font-bold text-2xl flex flex-row gap-0.5">vuohi<label class="bg-primary-500 py-0 px-1 text-2xl">.org</a></label>
+        </div>
+        <main class="flex-1 overflow-y-scroll">
+            
+<div class="flex justify-center items-center py-24 p-4 w-full">
+    <div class="bg-background-900 border border-background-800 shadow rounded-xl p-2 w-full sm:w-[30%]">
+        <div class="flex flex-row gap-5 items-center p-4">
+            <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left text-xl text-gray-300"></i></a>
+            <h1 class="text-white text-lg md:text-2xl font-semibold">Войти</h1>
+            
+        </div>
+        <form wire:snapshot="{&quot;data&quot;:{&quot;username&quot;:null,&quot;password&quot;:null,&quot;remember_me&quot;:true,&quot;turnstile&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;1LAHhUEW9I4BAIfZeWXQ&quot;,&quot;name&quot;:&quot;auth.login&quot;,&quot;path&quot;:&quot;login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ru&quot;},&quot;checksum&quot;:&quot;5e19b26f753b52d07fa7139295e093c769f049bee19581f6f1bc31fe23726c10&quot;}" wire:effects="[]" wire:id="1LAHhUEW9I4BAIfZeWXQ" wire:submit.prevent="login" class="mx-auto px-4 pb-4 py-2">
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-white">Имя пользователя</label>
+    <input type="text" wire:model="username" id="email"
+      class=" text-sm rounded-lg   block w-full p-2.5 bg-background-800 border-background-700 shadow placeholder-gray-400 text-white focus:ring-secondary-500 focus:border-secondary-500"
+      placeholder="user123" required />
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+  </div>
+  <div class="mb-5">
+    <label for="password" class="block mb-2 text-sm font-medium text-white">Пароль</label>
+    <input type="password" wire:model="password" id="password" placeholder="••••••••"
+      class="text-sm rounded-lg  block w-full p-2.5 bg-background-800 border-background-700 shadow placeholder-gray-400 text-white focus:ring-secondary-500 focus:border-secondary-500"
+      required />
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+  </div>
+
+  <div class="flex items-start mb-5">
+    <div class="flex items-center h-5">
+      <input wire:model="remember_me" id="remember" type="checkbox" value=""
+        class="w-4 h-4 border  rounded  focus:ring-3 border-transparent bg-background-900 border-background-800 focus:ring-primary-500 ring-offset-gray-800 focus:ring-offset-gray-800"
+        required />
+    </div>
+    <label for="remember" class="ms-2 text-sm text-gray-300">Запомнить меня</label>
+  </div>
+
+  <div
+    class="cf-turnstile"
+    data-sitekey="0x4AAAAAAAnN5HXa3PGK2oDw"
+            wire:ignore
+        data-callback="captchaCallback"
+        data-theme="dark"
+    ></div>
+
+<!--[if BLOCK]><![endif]-->    <script>
+        function captchaCallback(token) {
+            window.Livewire.find('1LAHhUEW9I4BAIfZeWXQ').set("turnstile", token);
+        }
+    </script>
+<!--[if ENDBLOCK]><![endif]-->
+  <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+  <button type="submit"
+  class="text-white bg-primary-500 hover:bg-primary-700 shadow mb-2 w-full font-medium rounded-lg text-sm  px-5 py-2 text-center">Войти</button>
+  <a href="register.html" class="text-xs md:text-base text-gray-300 hover:underline underline-offset-8">Нет аккаунта? Зарегистрируйтесь</a>
+</form>    </div>
+</div>
+
+
+            <div wire:snapshot="{&quot;data&quot;:{&quot;unseen_notifs&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;IlesUNQ4uUV1cco4Nonc&quot;,&quot;name&quot;:&quot;dashboard.notification&quot;,&quot;path&quot;:&quot;login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ru&quot;},&quot;checksum&quot;:&quot;33f8d25a2fa1787baeaa53528a558f4d4345b00f7b7a2b49a5e818f4d6ccb70c&quot;}" wire:effects="[]" wire:id="IlesUNQ4uUV1cco4Nonc" wire:ignore.self>
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    
+</div>        </main>
+    </div>
+    <div id="load" class="h-screen w-screen flex justify-center items-center transition-all">
+        <div role="status">
+            <svg aria-hidden="true" class="w-12 h-12 text-hsl-dark animate-spin fill-hsl-light rounded-full" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+            </svg>
+        </div>
+    </div>
+
+
+    <div wire:snapshot="{&quot;data&quot;:{&quot;show&quot;:false,&quot;notify_que&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;FOpaBoTnyhoHfd1hwvxg&quot;,&quot;name&quot;:&quot;dashboard.notify&quot;,&quot;path&quot;:&quot;login&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[&quot;550566592-0&quot;],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;ru&quot;},&quot;checksum&quot;:&quot;7d3547cfdb67d3e5032e22e5883c24d41cebe55655bb93278c84811ebd2f0cfc&quot;}" wire:effects="{&quot;scripts&quot;:{&quot;550566592-0&quot;:&quot;    &lt;script&gt;\n        Livewire.on(&#039;timer&#039;, () =&gt; {\n            var progress = 0;\n            const intervalId = setInterval(() =&gt; {\n                progress = Math.min(progress + 25, 100);\n\n                if (document.getElementById(&#039;notify_progress&#039;) == null) {\n                    clearInterval(intervalId);\n                }\n\n                document.getElementById(&#039;notify_progress&#039;).style.width = `${progress}%`;\n\n                if (progress &gt;= 100) {\n                    clearInterval(intervalId);\n                    Livewire.dispatch(&#039;close&#039;, {});\n                }\n            }, 1000);\n        })\n    &lt;\/script&gt;\n        &quot;},&quot;listeners&quot;:[&quot;notify&quot;,&quot;close&quot;]}" wire:id="FOpaBoTnyhoHfd1hwvxg" wire:ignore.self>
+    <div wire:ignore.self x-data="{ show: window.Livewire.find('FOpaBoTnyhoHfd1hwvxg').entangle('show') }" class="fixed top-10 z-[1000000] flex w-screen justify-center">
+        <div x-show="show"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-95"
+             class="relative w-[95%] md:w-2/3 rounded-xl text-white bg-background-800 border border-background-700 p-4 text-sm shadow-2xl">
+    
+            <button wire:click="close" class="top-4 absolute right-4 ml-auto text-white hover:text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
+            </button>
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <div class="relative flex h-1 mt-4 w-full overflow-hidden rounded-full bg-background-700">
+                <div role="progressbar" id="notify_progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" class="flex h-full items-center justify-center bg-primary-500 text-xs transition-all"></div>
+            </div>
+        </div>
+
+    </div>
+
+        </div>
+
+    <script src="js/pro.js"></script>
+    <script src="js/test.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            document.getElementById('load').classList.add('hidden');
+            document.getElementById('main').classList.remove('opacity-0');
+        })
+      </script>
+    <script>
+        let drawer;
+        function toggle_sidebar() {
+
+            const $targetEl = document.getElementById('sidebar');
+
+            const options = {
+                placement: 'right',
+                backdrop: true,
+                bodyScrolling: false,
+                edge: false,
+                edgeOffset: '',
+                backdropClasses:
+                    'bg-black/80 fixed inset-0 z-30',
+            };
+
+            const instanceOptions = {
+                id: 'sidebar',
+                override: true
+            };
+            drawer = new Drawer($targetEl, options, instanceOptions);
+            drawer.toggle();
+        }
+
+        function hide_sidebar(){
+            drawer.hide();
+        }
+
+    </script>
+    
+    <script >
+    console.warn('Livewire: The published Livewire assets are out of date\n See: https://livewire.laravel.com/docs/installation#publishing-livewires-frontend-assets')
+</script>
+<script src="vendor/livewire/livewire.min.js%3Fid=cc800bf4"   data-csrf="OLQAKxfzvN9FeqYtESY8kvsN94gp5DGxkvcm7DBl" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8f8c5c26e8114d31',t:'MTczNTMzNDQ4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>

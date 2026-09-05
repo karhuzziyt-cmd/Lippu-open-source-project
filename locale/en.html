@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>    <link href="../rappasoft/laravel-livewire-tables/core.min.css" rel="stylesheet" />     <link href="../rappasoft/laravel-livewire-tables/thirdparty.css" rel="stylesheet" />
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,shrink-to-fit=no">
+    <title>vuohi.org - Dashboard</title>
+
+
+    
+    <link href="../css/all.min.css" rel="stylesheet" />
+    
+    
+    <style type="text/css">@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/300/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/300/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/300/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/300/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/500/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/500/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/500/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/500/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:normal;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/300/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/300/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/300/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/300/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/300/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:300;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/300/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/400/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/400/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/400/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/400/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/400/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:400;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/400/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/500/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/500/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/500/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/500/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/500/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:500;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/500/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic-ext/700/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/greek-ext/700/italic.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/greek/700/italic.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/latin/700/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/latin-ext/700/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Ubuntu;font-style:italic;font-weight:700;src:url(../cf-fonts/s/ubuntu/5.0.11/cyrillic/700/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}</style>
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="../css/body.css" rel="stylesheet" />
+    <link rel="manifest" href="../manifest2.json" />
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="description" content="Paras HSL matkalippu simulaattor!">
+    <meta name="keywords" content="fuckhsl, taskuhsl, feikkihsl, hsl, hsl lippu">
+    <meta name="author" content="vuohi">
+
+
+    <meta property="og:title" content="vuohi.org" />
+    <meta property="og:description" content="vuohi.org is the best ticket simulator!" />
+    <meta property="og:image" content="https://vuohi.org/logo.jpg" />
+    <meta property="og:url" content="https://vuohi.org/dashboard" />
+    <meta property="og:type" content="website" />
+  
+
+   
+    <link rel="preload" as="style" href="../build/assets/app-C_ffcLDD.css" /><link rel="stylesheet" href="../build/assets/app-C_ffcLDD.css" data-navigate-track="reload" />    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+<script src="../rappasoft/laravel-livewire-tables/core.min.js"  ></script> <script src="../rappasoft/laravel-livewire-tables/thirdparty.min.js"  ></script></head>
+
+<body class="bg-background-950">
+    <div id="main" class="transition-all opacity-0 duration-700">
+        <div class="p-5 pb-0 hidden sm:block">
+            <a href="ru.html" class="text-white font-bold text-2xl flex flex-row gap-0.5">vuohi<label class="bg-primary-500 py-0 px-1 text-2xl">.org</a></label>
+        </div>
+        <main class="flex-1 overflow-y-scroll">
+            
+
+
+<div wire:snapshot="{&quot;data&quot;:{&quot;title&quot;:&quot;Dashboard&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;nhgBPDUri0rRnWQGfWN1&quot;,&quot;name&quot;:&quot;header&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;bac0cc7c6dc7d8bb5ea41f4239898cacd1b69e86c59ad3b2c6dfd0d22d162a2f&quot;}" wire:effects="[]" wire:id="nhgBPDUri0rRnWQGfWN1" class="flex justify-center w-full  p-7">
+
+
+    <div class="flex flex-row w-full sm:w-2/3 pt-4 justify-between items-center lato_medium">
+        <div class="flex flex-row text-text-100 items-center gap-5">
+            <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left text-xl"></i></a>
+            <h1 class="text-2xl font-semibold ">Dashboard</h1>
+        </div>
+        <div class="text-center text-text-100">
+            <a href="../settings.html" class="font-medium rounded-lg text-sm md:text-base py-2.5 px-4 mb-2 ">
+                <i class="fa-solid fa-gear text-lg"></i>
+            </a>
+            <button id="toggle_sidebar" class="focus:ring-2 focus:ring-white font-medium rounded-lg text-sm  md:text-base py-2.5 px-4 mb-2 " type="button" data-drawer-target="sidebar" data-drawer-show="sidebar" data-drawer-placement="right" aria-controls="sidebar" onclick="toggle_sidebar()">
+                <i class="fa-solid fa-bars-sort text-lg"></i>
+            </button>
+        </div>
+        <div id="sidebar" class="fixed top-0 right-0 z-40 h-screen p-4 pt-2 overflow-y-auto transition-transform translate-x-full bg-background-900 w-80" tabindex="-1" aria-labelledby="drawer-right-label">
+
+            <button type="button" onclick="hide_sidebar()" data-drawer-hide="sidebar" aria-controls="sidebar" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-text">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+
+            <div class="flex flex-col w-full mt-8 gap-4">
+
+                <!--[if BLOCK]><![endif]-->
+                <a type="button" href="../ads.html" class="rounded-lg bg-primary-500 px-5 py-2.5 text-center text-sm font-semibold text-text shadow-sm transition-all hover:border-primary-700 hover:bg-primary-700 focus:ring focus:ring-primary-200 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300">
+                    Sign in                </a>
+                <a type="button" href="../register.html" class="rounded-lg border border-primary-300 px-5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-all hover:border-primary-700 hover:bg-primary-700 focus:ring focus:ring-primary-200 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300">
+                    Register                </a>
+                <!--[if ENDBLOCK]><![endif]-->
+                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            </div>
+
+            <hr class="my-4 border-background-700">
+            
+            <div class="flex flex-col gap-2 mt-2 md:text-lg">
+                <div x-data="{
+                    open: true,
+                    toggle() {
+                        if (this.open) {
+                            return this.close()
+                        }
+    
+                        this.$refs.button.focus()
+    
+                        this.open = true
+                    },
+                    close(focusAfter) {
+                        if (! this.open) return
+    
+                        this.open = false
+    
+                        focusAfter && focusAfter.focus()
+                    }
+                }" x-on:keydown.escape.prevent.stop="close($refs.button)" x-on:focusin.window="! $refs.panel.contains($event.target) && close()" x-id="['dropdown-button']" class="relative inline-block">
+
+                    <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')" type="button" class="uppercase border border-text-300 inline-flex gap-2 rounded-lg bg-transparent py-1 px-2 items-center text-center font-medium text-text-300 shadow-sm transition-all hover:text-gray-300">
+                        en
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" class="absolute left-0 z-10 mt-2 w-48 rounded-lg border border-background-700 bg-background-800 text-left text-sm shadow-lg">
+                        <div class="p-1 divide-y divide-background-800">
+                            <a href="fi.html" class="flex w-full items-center px-3 transition-all py-2 text-text-100 hover:bg-background-700"> Suomi </a>
+                            <a href="en.html" class="flex w-full items-center px-3 transition-all py-2 text-left text-sm text-text-100 hover:bg-background-700"> English </a>
+                            <a href="ru.html" class="flex w-full items-center px-3 transition-all py-2 text-left text-sm text-text-100 hover:bg-background-700"> Русский </a>
+                        </div>
+                    </div>
+                </div>
+           
+                <a class="text-primary-400" href="ru.html"> Dashboard</a>
+                <a class="text-text-100 " href="../news.html"> News</a>
+                <a class="text-text-100 " href="../chat.html"> Chat</a>
+                <a class="text-text-100 " href="../fine-funding.html"> Fine funding</a>
+                <a class="text-text-100 " href="../premium.html"> Vuohi Premium </a>
+                <hr class="my-4 border-background-700">
+
+                <a class="text-text-100" href="../faq.html">
+                    FAQ
+                </a>
+                <a class="text-text-100" href="../tos.html">
+                    Terms of Service
+                </a>
+                <a class="text-text-100" href="../privacy-policy.html">
+                    Privacy Policy
+                </a>
+                <a class="text-text-100" href="../ads.html">
+                    Ads
+                </a>
+
+                <hr class="border-background-700 my-4">
+                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<a href="https://t.me/vuohiorg" class="w-screen underline underline-offset-4 px-4 inset-0 flex flex-row items-center justify-start gap-2 font-medium fixed h-10 top-0 left-0 bg-hsl-blue p-2 rounded-b-xl text-white">
+<i class="fa-brands fa-telegram"></i> t.me/vuohiorg
+</a>
+
+
+<style>
+    .btn-glow {
+        -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 136, 255, 0.326);
+        -moz-box-shadow: 0px 0px 50px 0px rgba(0, 136, 255, 0.326);
+        box-shadow: 0px 0px 50px 0px rgba(0, 136, 255, 0.326);
+    }
+
+</style>
+
+
+<div class="w-full flex justify-center p-4 pt-0">
+    <div class="w-full sm:w-2/3  px-1 py-1 space-y-4 rounded ">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:gap-4">
+            <div class="md:w-1/2 overflow-hidden rounded-xl bg-background-900  border border-background-800  shadow h-fit">
+                <div class="p-4 md:p-5 flex flex-col h-full justify-between space-y-2">
+
+                    <div class="flex justify-start items-start gap-3 w-full relative">
+                        <span class="text-xs md:text-base font-semibold bg-secondary-500/20 rounded-md text-secondary-400 flex items-center w-fit px-2 md:px-4 py-0.5 absolute -top-1 -right-1">PROMO</span>
+                        <div class="flex flex-col w-full items-start">
+
+                            <h3 class="text-lg md:text-xl font-semibold text-white flex flex-row items-center gap-1">Vuohi <label class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-sm rounded p-1 py-0.5">Premium</label></h3>
+
+                            <label class="text-gray-500 transition-all text-sm md:text-lg w-full">
+                                Want to get access to Beta features? Or do you want to Support us?                            </label>
+                            <a href="../premium.html" type="button" class="w-full rounded p-1 py-1.5 md:p-2 md:py-3 md:text-base bg-primary-500 mt-2 text-center text-white text-sm font-semibold">
+                               Premium
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2  w-full overflow-hidden rounded-xl bg-background-900  border border-background-800  shadow h-fit">
+                <div class="p-4 md:p-5 flex flex-col h-full justify-between space-y-2">
+
+                    <div class="flex justify-start items-start gap-3 relative">
+                        <span class="text-xs md:text-base font-semibold bg-secondary-500/20 rounded-md text-secondary-400 flex items-center w-fit px-2 md:px-4 py-0.5 absolute -top-1 -right-1">PROMO</span>
+                        <div class="flex flex-col items-start">
+                            <div class="flex flex-row items-center gap-0.5">
+                                <h3 class="text-lg md:text-xl font-semibold text-white flex flex-row items-center gap-1">Vuohi </h3>
+                                <h1 class="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Native</h1>
+                            </div>
+
+                            <label class="text-gray-500 transition-all text-sm md:text-lg w-full">
+                                VuohiNative, an actual application, not a website. Coming soon...                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row w-full gap-3">
+
+            <div wire:snapshot="{&quot;data&quot;:{&quot;news&quot;:[{&quot;content&quot;:[{&quot;content&quot;:[{&quot;fi&quot;:&quot;Kiitos n\u00e4ist\u00e4 upeista vuosista lippusimulaattorimme parissa! \ud83d\udc9b\nValitettavasti toiminta p\u00e4\u00e4ttyy 1.1.2025. P\u00e4\u00e4t\u00f6s ei ollut helppo, mutta matkamme vuosina 2022\u20132024 on ollut ainutlaatuinen.\n\nOlemme kiitollisia teille, 15 000 p\u00e4ivitt\u00e4iselle k\u00e4ytt\u00e4j\u00e4lle ja 8 000 rekister\u00f6ityneelle, jotka teitte t\u00e4st\u00e4 mahdollista. Vuonna 2023 ylitimme miljoona sivun katselukertaa \u2013 uskomatonta!\n\nKiitos tuestanne, palautteestanne ja yhteisist\u00e4 hetkist\u00e4. Toivomme, ett\u00e4 sovellus on tuonut iloa ja hy\u00f6ty\u00e4 el\u00e4m\u00e4\u00e4nne. \ud83d\ude4f&quot;,&quot;en&quot;:&quot;Thank you for these amazing years with our ticket simulator! \ud83d\udc9b  \nUnfortunately, our service will come to an end on January 1, 2025. This decision wasn\u2019t easy, but the journey we\u2019ve shared from 2022 to 2024 has been truly unique.\n\nWe are deeply grateful to you\u2014our 15,000 daily users and 8,000 registered members\u2014for making this possible. In 2023, we surpassed one million page views\u2014simply incredible!  \n\nThank you for your support, feedback, and the moments we\u2019ve shared together. We hope the app has brought joy and value to your life. \ud83d\ude4f  &quot;,&quot;ru&quot;:&quot;\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u044d\u0442\u0438 \u0443\u0434\u0438\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0433\u043e\u0434\u044b \u0432\u043c\u0435\u0441\u0442\u0435 \u0441 \u043d\u0430\u0448\u0438\u043c \u0441\u0438\u043c\u0443\u043b\u044f\u0442\u043e\u0440\u043e\u043c \u0431\u0438\u043b\u0435\u0442\u043e\u0432! \ud83d\udc9b\n\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u043d\u0430\u0448\u0430 \u0440\u0430\u0431\u043e\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u0441\u044f 1 \u044f\u043d\u0432\u0430\u0440\u044f 2025 \u0433\u043e\u0434\u0430. \u042d\u0442\u043e \u0440\u0435\u0448\u0435\u043d\u0438\u0435 \u0434\u0430\u043b\u043e\u0441\u044c \u043d\u0435\u043b\u0435\u0433\u043a\u043e, \u043d\u043e \u043d\u0430\u0448 \u043f\u0443\u0442\u044c \u0441 2022 \u043f\u043e 2024 \u0433\u043e\u0434 \u0431\u044b\u043b \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u043c.\n\n\u041c\u044b \u0438\u0441\u043a\u0440\u0435\u043d\u043d\u0435 \u0431\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u043d\u044b \u0432\u0430\u043c \u2014 \u043d\u0430\u0448\u0438\u043c 15 000 \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u044b\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c \u0438 8 000 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c \u2014 \u0437\u0430 \u0442\u043e, \u0447\u0442\u043e \u0441\u0434\u0435\u043b\u0430\u043b\u0438 \u044d\u0442\u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u044b\u043c. \u0412 2023 \u0433\u043e\u0434\u0443 \u043c\u044b \u043f\u0440\u0435\u043e\u0434\u043e\u043b\u0435\u043b\u0438 \u043e\u0442\u043c\u0435\u0442\u043a\u0443 \u0432 \u043c\u0438\u043b\u043b\u0438\u043e\u043d \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u043e\u0432 \u0441\u0442\u0440\u0430\u043d\u0438\u0446 \u2014 \u043d\u0435\u0432\u0435\u0440\u043e\u044f\u0442\u043d\u043e!\n\n\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u0432\u0430\u0448\u0443 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443, \u043e\u0442\u0437\u044b\u0432\u044b \u0438 \u043c\u043e\u043c\u0435\u043d\u0442\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043c\u044b \u0440\u0430\u0437\u0434\u0435\u043b\u0438\u043b\u0438 \u0432\u043c\u0435\u0441\u0442\u0435. \u041d\u0430\u0434\u0435\u0435\u043c\u0441\u044f, \u0447\u0442\u043e \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043f\u0440\u0438\u043d\u0435\u0441\u043b\u043e \u0440\u0430\u0434\u043e\u0441\u0442\u044c \u0438 \u043f\u043e\u043b\u044c\u0437\u0443 \u0432 \u0432\u0430\u0448\u0443 \u0436\u0438\u0437\u043d\u044c. \ud83d\ude4f&quot;},{&quot;s&quot;:&quot;std&quot;}],&quot;title&quot;:[{&quot;fi&quot;:&quot;Kiitos!&quot;,&quot;en&quot;:&quot;Thank you!&quot;,&quot;ru&quot;:&quot;\u0421\u043f\u0430\u0441\u0438\u0431\u043e!&quot;},{&quot;s&quot;:&quot;std&quot;}]},{&quot;s&quot;:&quot;std&quot;}],&quot;views&quot;:97,&quot;created&quot;:&quot;2 weeks&quot;},{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;ycwAIExhx9ysKTZyOIuO&quot;,&quot;name&quot;:&quot;dashboard.latest-news&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;4c6b712b605301e465d029d45a870d37cf19328a3d5cb75fb905b00d550d60fd&quot;}" wire:effects="[]" wire:id="ycwAIExhx9ysKTZyOIuO" class="w-full sm:w-1/2 overflow-hidden rounded-xl bg-background-900  border border-background-800 shadow-xl">
+
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+    <!--[if BLOCK]><![endif]-->        
+    <div class="flex relative h-full w-full">
+        <div class="p-4 blur-xl flex flex-col sm:text-start h-full justify-between space-y-2">
+            <div class="flex flex-col gap-2">
+                <div class="flex flex-row items-center justify-between w-full">
+                    wdajsdiadjawiodjoiawdj
+    
+                    <div class="px-3 py-0.5 rounded-full text-sm ">
+                        <label class="flex flex-row items-center gap-2 text-gray-400">
+                             <i class="fa-solid fa-eye text-gray-400 text-sm"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="max-h-[20vh] overflow-y-scroll">
+                    <p class="text-gray-300 w-[80%] break-words whitespace-normal">   
+                       dwikdioaksdijdijisdjasidjiiaosjfdoiwjfoiwjfoaisjfiojwaijfwoiaijfaisojf ahhahhaha idiot huahoudhjwiuhdiawhd
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-row justify-between items-center">
+                <span class="text-gray-500 text-sm">
+                    <time class="">
+                        <i class="fa-regular fa-timer"></i> weuifjksfhe 12
+                    </time>
+                </span>
+                <div class="text-end text-sm">
+                    <a href="../news.html" class=" text-white hover:underline underline-offset-4 transition-all">Show previous news</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 z-10 flex flex-col p-4 text-center justify-center items-center h-full bg-black/20 text-white">
+            <label class="text-lg font-semibold">Oops!</label>
+            <label class="text-gray-300 text-sm w-full sm:w-2/3 whitespace-normal break-words">Login to see the news and other features!</label>
+            <a class="bg-primary-500 rounded-full px-6 py-1 mt-4 text-xs font-semibold btn-red-glow" href="../ads.html">Login</a>
+        </div>
+    </div>
+    
+    <!--[if ENDBLOCK]><![endif]-->
+</div>      
+            <div class="flex flex-col gap-3 sm:w-1/2">
+                <div class="flex flex-wrap gap-3">
+                    <div x-data="{open: false}" class="w-full relative overflow-hidden rounded-xl bg-background-900 border border-background-800  shadow h-fit">
+
+                        <div x-show="!open" class="px-3 py-3 md:p-5 flex flex-col h-full justify-between space-y-2">
+                            <div class="flex flex-row gap-0 justify-between items-center">
+                                <div class="flex gap-1 flex-col items-start justify-center w-full relative">
+                                    <h3 class="font-medium text-lg  md:text-xl text-white">Ticket simulator</h3>
+                                    <div class="flex flex-row gap-2 items-baseline">
+                                        <span class="relative flex-shrink-0 flex h-2.5 w-2.5">
+                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
+                                        </span>
+                                        <label class="text-green-400 text-sm  md:text-base">Operational</label>
+                                    </div>
+                                </div>
+                                <button onclick="start_count_down()" @click="open = true" type="button" class="rounded-full flex-shrink-0 btn-glow h-8 w-8 md:size-10 bg-primary-400 hover:bg-primary-500  flex justify-center items-center p-2 text-center text-sm font-medium text-white shadow-sm transition-all focus:ring focus:ring-white ">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div x-show="open" class="px-3 py-3 md:p-5 flex flex-col h-full justify-between space-y-2">
+                            <div class="flex flex-row gap-0 justify-between items-center">
+                                <div class="flex gap-1 flex-col items-start justify-center w-full relative">
+                                    <h3 class="font-medium text-lg  md:text-xl text-white">Please wait...</h3>
+                                    <label class="text-gray-500 text-sm  md:text-base" id="count_down">Please wait 10 seconds to continue (Bypass with premium)</label>
+                                    
+                                </div>
+                                <img src="../svg/hsl.svg" class="animate-spin-slow size-9 bg-primary-400 rounded-full p-1">
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+                    <div wire:snapshot="{&quot;data&quot;:{&quot;color&quot;:&quot;#00985f&quot;,&quot;second_color&quot;:&quot;#00b9e4&quot;,&quot;invalid&quot;:false},&quot;memo&quot;:{&quot;id&quot;:&quot;yKyifPD4weVTbrZsJaB5&quot;,&quot;name&quot;:&quot;dashboard.days-color&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;cf40a3b5a5971a00afa2bf220af086c39780c96138caab52721aa410cbcb1bdf&quot;}" wire:effects="[]" wire:id="yKyifPD4weVTbrZsJaB5" class="w-full overflow-hidden rounded-xl flex flex-row justify-between bg-background-900 border border-background-800 shadow-xl h-fit">
+    <div class="px-4 text-start py-3 md:p-5 flex flex-col h-full justify-between space-y-2 w-1/2">
+        <div class="flex flex-col justify-between text-start items-between gap-2">
+            <h3 class="text-white text-lg md:text-xl font-medium">Day's color</h3>
+            <!--[if BLOCK]><![endif]-->            <div class="w-full text-center p-1 px-4 border  text-sm md:text-base rounded-lg" style="color: #00985f; background-color: #00985f1E; border-color: #00985f28">
+               #00985f
+            </div>
+            <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    </div>
+    <div class="w-0.5 bg-background-800 rounded-full my-2"></div>
+    <div class="px-4 text-start py-3 md:p-5 flex flex-col h-full justify-between space-y-2 w-1/2">
+        <div class="flex flex-col justify-between text-start items-start  gap-2">
+            <h3 class="text-white text-lg md:text-xl font-medium">Tomorrow's color</h3>
+            <!--[if BLOCK]><![endif]-->            <div class="w-full text-center p-1 px-4 border  text-sm md:text-base rounded-lg" style="color: #00b9e4; background-color: #00b9e41E; border-color: #00b9e428">
+               #00b9e4
+            </div>
+            <!--[if ENDBLOCK]><![endif]-->
+        </div>
+    </div>
+</div>
+                </div>
+                <div wire:snapshot="{&quot;data&quot;:{&quot;feedback&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;TR7qvZGOMjfONQZMO9LX&quot;,&quot;name&quot;:&quot;dashboard.feed-back&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;17b212e8ff4f638eff7b56d278de5318d0b3b02884dc70f08834ea65fb7a007b&quot;}" wire:effects="[]" wire:id="TR7qvZGOMjfONQZMO9LX"  x-data="{ showModal: false }" x-on:keydown.window.escape="showModal = false" x-init=" 
+$nextTick(() => {
+    Livewire.on('close_all', () => {
+        showModal = false;
+    }); 
+})
+">
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0" id="1"></div>
+</div>
+
+
+<script>
+    const disclaimer = localStorage.getItem('thank-you') || false;
+    if(!disclaimer)
+    {
+        window.location.href="/ad-disclaimer"
+    }
+    function start_count_down() {
+        let seconds_cycled = 0;
+        let cycles_completed = false;
+        var o = {
+            "msg": "Please wait :seconds seconds to continue (Bypass with premium)",
+            "role": 1
+        };
+
+        if(o.role >= 1){
+            window.location.href = "https://vuohi.org/ticket";
+        }
+
+        function replaceSeconds(message, seconds) {
+            return message.replace(':seconds', seconds);
+        }
+
+        setInterval(() => {
+            if(cycles_completed){
+                window.location.href = "https://vuohi.org/ticket";
+                return;
+            }
+            seconds_cycled++;
+            if(seconds_cycled == 6){
+                cycles_completed = true;
+            }
+
+            var message = replaceSeconds(o['msg'], 10 - seconds_cycled);
+
+            document.getElementById('count_down').innerText = message
+        }, 1000)
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('1').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center', 
+            inline: 'nearest' 
+        });
+    })
+
+</script>
+
+
+            <div wire:snapshot="{&quot;data&quot;:{&quot;unseen_notifs&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;rYOZnNlpOpVnWBW3rp3Z&quot;,&quot;name&quot;:&quot;dashboard.notification&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;42bfa430347478d8de0bad3e90ec118a975e7f998e2410170d6cb95e1d8b5b9a&quot;}" wire:effects="[]" wire:id="rYOZnNlpOpVnWBW3rp3Z" wire:ignore.self>
+    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+    
+</div>        </main>
+    </div>
+    <div id="load" class="h-screen w-screen flex justify-center items-center transition-all">
+        <div role="status">
+            <svg aria-hidden="true" class="w-12 h-12 text-hsl-dark animate-spin fill-hsl-light rounded-full" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+            </svg>
+        </div>
+    </div>
+
+
+    <div wire:snapshot="{&quot;data&quot;:{&quot;show&quot;:false,&quot;notify_que&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;Vid9OOVpkrvmMIGmphuB&quot;,&quot;name&quot;:&quot;dashboard.notify&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[&quot;550566592-0&quot;],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;758482329eb94298936c7b4517c970aded8a6e74e1f495430e5cf02ca4d7e9e4&quot;}" wire:effects="{&quot;scripts&quot;:{&quot;550566592-0&quot;:&quot;    &lt;script&gt;\n        Livewire.on(&#039;timer&#039;, () =&gt; {\n            var progress = 0;\n            const intervalId = setInterval(() =&gt; {\n                progress = Math.min(progress + 25, 100);\n\n                if (document.getElementById(&#039;notify_progress&#039;) == null) {\n                    clearInterval(intervalId);\n                }\n\n                document.getElementById(&#039;notify_progress&#039;).style.width = `${progress}%`;\n\n                if (progress &gt;= 100) {\n                    clearInterval(intervalId);\n                    Livewire.dispatch(&#039;close&#039;, {});\n                }\n            }, 1000);\n        })\n    &lt;\/script&gt;\n        &quot;},&quot;listeners&quot;:[&quot;notify&quot;,&quot;close&quot;]}" wire:id="Vid9OOVpkrvmMIGmphuB" wire:ignore.self>
+    <div wire:ignore.self x-data="{ show: window.Livewire.find('Vid9OOVpkrvmMIGmphuB').entangle('show') }" class="fixed top-10 z-[1000000] flex w-screen justify-center">
+        <div x-show="show"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-95"
+             class="relative w-[95%] md:w-2/3 rounded-xl text-white bg-background-800 border border-background-700 p-4 text-sm shadow-2xl">
+    
+            <button wire:click="close" class="top-4 absolute right-4 ml-auto text-white hover:text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
+            </button>
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+            <div class="relative flex h-1 mt-4 w-full overflow-hidden rounded-full bg-background-700">
+                <div role="progressbar" id="notify_progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" class="flex h-full items-center justify-center bg-primary-500 text-xs transition-all"></div>
+            </div>
+        </div>
+
+    </div>
+
+        </div>
+
+    <script src="../js/pro.js"></script>
+    <script src="../js/test.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+            document.getElementById('load').classList.add('hidden');
+            document.getElementById('main').classList.remove('opacity-0');
+        })
+      </script>
+    <script>
+        let drawer;
+        function toggle_sidebar() {
+
+            const $targetEl = document.getElementById('sidebar');
+
+            const options = {
+                placement: 'right',
+                backdrop: true,
+                bodyScrolling: false,
+                edge: false,
+                edgeOffset: '',
+                backdropClasses:
+                    'bg-black/80 fixed inset-0 z-30',
+            };
+
+            const instanceOptions = {
+                id: 'sidebar',
+                override: true
+            };
+            drawer = new Drawer($targetEl, options, instanceOptions);
+            drawer.toggle();
+        }
+
+        function hide_sidebar(){
+            drawer.hide();
+        }
+
+    </script>
+    
+    <script >
+    console.warn('Livewire: The published Livewire assets are out of date\n See: https://livewire.laravel.com/docs/installation#publishing-livewires-frontend-assets')
+</script>
+<script src="../vendor/livewire/livewire.min.js%3Fid=cc800bf4"   data-csrf="OLQAKxfzvN9FeqYtESY8kvsN94gp5DGxkvcm7DBl" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8f8c5c12b9c04d31',t:'MTczNTMzNDQ3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
