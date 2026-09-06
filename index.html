@@ -130,5 +130,63 @@
         </a>
 
     </div>
+
+    <style>
+    /* Vesileimojen säiliön ja tekstien tyylit */
+    #watermark-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none; /* Sallii klikkaukset läpi alla oleviin painikkeisiin */
+        z-index: 9999;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+        overflow: hidden;
+    }
+
+    .watermark-item {
+        color: rgba(255, 0, 0, 0.35); /* Punainen, 35% läpinäkyvyys */
+        font-size: 22px;
+        font-weight: 900;
+        text-transform: uppercase;
+        transform: rotate(-30deg);
+        user-select: none;
+        white-space: nowrap;
+        padding: 30px;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    }
+</style>
+
+<script>
+    (function() {
+        // ==========================================
+        // ASETUKSET: Muuta "enabled" -> "disabled" jos haluat vesileiman pois
+        // ==========================================
+        const WATERMARK_STATUS = "enabled"; // "enabled" tai "disabled"
+        const WATERMARK_TEXT = "FEIKKI LIPPU";
+
+        if (WATERMARK_STATUS === "enabled") {
+            const overlay = document.createElement('div');
+            overlay.id = 'watermark-overlay';
+
+            // Lasketaan näytön kokoon sopiva määrä vesileimoja
+            const count = Math.ceil((window.innerWidth * window.innerHeight) / 12000);
+
+            for (let i = 0; i < count; i++) {
+                const item = document.createElement('div');
+                item.className = 'watermark-item';
+                item.innerText = WATERMARK_TEXT;
+                overlay.appendChild(item);
+            }
+
+            document.body.appendChild(overlay);
+        }
+    })();
+</script>
+    
 </body>
 </html>
