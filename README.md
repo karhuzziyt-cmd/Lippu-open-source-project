@@ -19,6 +19,8 @@ mukana tulee normaali pelkistetty dashboard ja sen voi halutessaan poistaa vaiht
 INDEX on se joka avautuu ensimmäisenä kun sivun aukaisee, sieltä navigoidaan sitten eteenpäin muihin html
 
 
+VOIT POISTAA FEIKKI LIPPU VESILEIMAT MENEMÄLLÄ HOME.HTML KELAAMALLA IHAN ALAS KOODIA JA LAITTAMALLA ENABLED TILAAN DISABLED KOODISSA OHJEET KUN KELAAT ALAS
+
 
 
 
